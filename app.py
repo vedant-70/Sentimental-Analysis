@@ -18,5 +18,3 @@ def analyze():
     sentiment_scores = sia.polarity_scores(text)
     return render_template('result.html', text=text, sentiment=sentiment_scores)
 
-if __name__ == '__main__':
-    app.run(debug=True)
