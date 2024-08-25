@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .result-container {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: white;
+        }
+        .result-container h1 {
+            margin-bottom: 20px;
+        }
+        .result-container .sentiment {
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .result-container .sentiment div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .result-container .compound-score {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .result-container .overall-sentiment {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="-ms-flex-item-align: center; justify-content:center; background-image: url(/static/img4.webp); background-size: cover; background-position: center;">
+    <div class="result-container">
+        <h1>Sentiment Analysis Result</h1>
+        <p><strong>Input Text:</strong> {{ text }}</p>
+        <div class="sentiment">
+            <div>
+                <strong>Negative:</strong><br>{{ sentiment['neg'] }}
+            </div>
+            <div>
+                <strong>Neutral:</strong><br>{{ sentiment['neu'] }}
+            </div>
+            <div>
+                <strong>Positive:</strong><br>{{ sentiment['pos'] }}
+            </div>
+        </div>
+        <div class="compound-score">
+            <strong>Compound Score:</strong> {{ sentiment['compound'] }}
+        </div>
+        <div class="overall-sentiment">
+            {% if sentiment['neg'] == 1 %}
+                The text is negative.
+            {% elif sentiment['neu'] == 1 %}
+                The text is neutral.
+            {% elif sentiment['pos'] == 1 %}
+                The text is positive.
+            {% elif sentiment['compound'] >= 0.05 %}
+                The text is probably positive.
+            {% elif sentiment['compound'] <= -0.05 %}
+                The text is probably negative.
+            {% else %}
+                The text is probably neutral.
+            {% endif %}
+        </div>
+        <a href="/" style="color: #4CAF50; text-decoration: none;">Analyze another text</a>
+    </div>
+</body>
+</html>

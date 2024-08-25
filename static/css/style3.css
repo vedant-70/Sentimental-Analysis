@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("/templates/static/images/Img1.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.form-container, .result-container {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    color: black;
+    background-color: white;
+    padding: 0px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none; /* Removes default outline */
+    transition: border-color 0.3s;
+    width: 400px;
+}
+
+textarea:focus {
+    border: 2px solid #4CAF50; /* Green border on focus */
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.sentiment {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sentiment div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.compound-score {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.overall-sentiment {
+    font-size: 22px;
+    font-weight: bold;
+}

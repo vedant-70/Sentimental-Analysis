@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    -ms-flex-item-align: center;
+    justify-content: center;
+    background-image: url('/templates/static/images/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+.result-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+.result-container h1 {
+    margin-bottom: 20px;
+}
+.result-container .sentiment {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.result-container .sentiment div {
+    flex: 1;
+    margin: 0 10px;
+}
+.result-container .compound-score {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.result-container .overall-sentiment {
+    font-size: 22px;
+    font-weight: bold;
+}
